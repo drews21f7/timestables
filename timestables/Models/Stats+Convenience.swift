@@ -10,12 +10,12 @@ import Foundation
 import CoreData
 
 extension Stats {
-    convenience init(attempts: Int64, averageScore: Double, highestScore: Double, lastScore: Double, previousScore: Double, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
+    convenience init(attempts: Int64, averageScore: Double, highestScore: Double, lastScore: Double, currentScore: Double, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
         self.init(context: context)
         self.attempts = attempts
         self.averageScore = averageScore
         self.highestScore = highestScore
         self.lastScore = lastScore
-        self.previousScore = previousScore
+        self.currentScore = currentScore
     }
 }
