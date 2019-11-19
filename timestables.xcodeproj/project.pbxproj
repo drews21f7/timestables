@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A00CC4A237CC2900095A5F4 /* StatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC49237CC2900095A5F4 /* StatsController.swift */; };
+		3A00CC4D23833A970095A5F4 /* Timer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC4C23833A970095A5F4 /* Timer+Convenience.swift */; };
+		3A00CC4F23833B1C0095A5F4 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC4E23833B1C0095A5F4 /* TimerController.swift */; };
 		3A32EAF1237623E300D49A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32EAF0237623E300D49A07 /* AppDelegate.swift */; };
 		3A32EAF3237623E300D49A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32EAF2237623E300D49A07 /* SceneDelegate.swift */; };
 		3A32EAF8237623E300D49A07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A32EAF6237623E300D49A07 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		3A00CC49237CC2900095A5F4 /* StatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsController.swift; sourceTree = "<group>"; };
+		3A00CC4C23833A970095A5F4 /* Timer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Convenience.swift"; sourceTree = "<group>"; };
+		3A00CC4E23833B1C0095A5F4 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		3A32EAED237623E300D49A07 /* timestables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timestables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A32EAF0237623E300D49A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A32EAF2237623E300D49A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				3A00CC49237CC2900095A5F4 /* StatsController.swift */,
+				3A00CC4E23833B1C0095A5F4 /* TimerController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 				3A32EAF9237623E300D49A07 /* timestables.xcdatamodeld */,
 				3A32EB0C237A1A1800D49A07 /* CoreDataStack.swift */,
 				3A32EB0E237A1A6B00D49A07 /* Stats+Convenience.swift */,
+				3A00CC4C23833A970095A5F4 /* Timer+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +192,9 @@
 				3A32EB0F237A1A6B00D49A07 /* Stats+Convenience.swift in Sources */,
 				3A00CC4A237CC2900095A5F4 /* StatsController.swift in Sources */,
 				3A32EAFB237623E300D49A07 /* timestables.xcdatamodeld in Sources */,
+				3A00CC4D23833A970095A5F4 /* Timer+Convenience.swift in Sources */,
 				3A32EAF1237623E300D49A07 /* AppDelegate.swift in Sources */,
+				3A00CC4F23833B1C0095A5F4 /* TimerController.swift in Sources */,
 				3A32EAF3237623E300D49A07 /* SceneDelegate.swift in Sources */,
 				3A32EB0D237A1A1800D49A07 /* CoreDataStack.swift in Sources */,
 			);
