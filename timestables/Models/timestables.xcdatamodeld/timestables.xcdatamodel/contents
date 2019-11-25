@@ -7,12 +7,16 @@
         <attribute name="currentScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="highestScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="lastScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="orderNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Stats"/>
+        </fetchedProperty>
     </entity>
     <entity name="Timer" representedClassName="Timer" syncable="YES" codeGenerationType="class">
         <attribute name="seconds" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Stats" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Stats" positionX="-63" positionY="-18" width="128" height="176"/>
         <element name="Timer" positionX="-63" positionY="27" width="128" height="58"/>
     </elements>
 </model>

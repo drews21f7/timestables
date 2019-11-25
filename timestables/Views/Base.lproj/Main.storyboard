@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Starting Screen View Controller-->
         <scene sceneID="cW6-gs-6vH">
             <objects>
-                <viewController id="LCa-2U-38N" sceneMemberID="viewController">
+                <viewController id="LCa-2U-38N" customClass="StartingScreenViewController" customModule="timestables" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gV4-ZB-Z4v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
