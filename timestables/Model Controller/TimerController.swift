@@ -18,6 +18,7 @@ class TimerController {
     init() {
         
         let fetchRequest: NSFetchRequest<Timer> = Timer.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "secondsTotaled", ascending: true)]
         
         let resultsController: NSFetchedResultsController<Timer> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -42,9 +43,10 @@ class TimerController {
         timeInSeconds += minutes * 60
         timeInSeconds += tensOfSeconds * 10
         timeInSeconds += seconds
-        let newTimer = Timer(seconds: timeInSeconds)
+        let newTimer = Timer(seconds: seconds, tensOfSeconds: tensOfSeconds, minutes: minutes, tensOfMinutes: tensOfMinutes, secondsTotaled: timeInSeconds)
         timer.append(newTimer)
         saveToPersistentStore()
+        print ("Timer created")
     }
     
     func updateTimer(timer: Timer, tensOfMinutes: Int16, minutes: Int16, tensOfSeconds: Int16, seconds: Int16) {
@@ -53,8 +55,13 @@ class TimerController {
         timeInSeconds += minutes * 60
         timeInSeconds += tensOfSeconds * 10
         timeInSeconds += seconds
-        timer.seconds = timeInSeconds
+        timer.tensOfMinutes = tensOfMinutes
+        timer.minutes = minutes
+        timer.tensOfSeconds = tensOfSeconds
+        timer.seconds = seconds
+        timer.secondsTotaled = timeInSeconds
         saveToPersistentStore()
+        print ("Timer Updated")
     }
     
     // Save to Coredata

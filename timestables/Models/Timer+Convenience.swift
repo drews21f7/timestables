@@ -10,8 +10,12 @@ import Foundation
 import CoreData
 
 extension Timer {
-    convenience init(seconds: Int16, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
+    convenience init(seconds: Int16, tensOfSeconds: Int16, minutes: Int16, tensOfMinutes: Int16, secondsTotaled: Int16, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
         self.init(context: context)
         self.seconds = seconds
+        self.tensOfSeconds = tensOfSeconds
+        self.minutes = minutes
+        self.tensOfMinutes = tensOfMinutes
+        self.secondsTotaled = secondsTotaled
     }
 }

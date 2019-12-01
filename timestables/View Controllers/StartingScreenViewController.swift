@@ -18,8 +18,8 @@ class StartingScreenViewController: UIViewController {
         } else {
             for stats in StatsController.sharedInstance.fetchedResultsController.fetchedObjects! {
                 StatsController.sharedInstance.stats.append(stats)
-                print ("Stats appended to SOT")
             }
+            print ("Stats appended to SOT")
         }
         
     }

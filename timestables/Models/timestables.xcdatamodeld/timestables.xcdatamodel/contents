@@ -13,10 +13,14 @@
         </fetchedProperty>
     </entity>
     <entity name="Timer" representedClassName="Timer" syncable="YES" codeGenerationType="class">
+        <attribute name="minutes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="seconds" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondsTotaled" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tensOfMinutes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tensOfSeconds" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Stats" positionX="-63" positionY="-18" width="128" height="176"/>
-        <element name="Timer" positionX="-63" positionY="27" width="128" height="58"/>
+        <element name="Timer" positionX="-63" positionY="27" width="128" height="118"/>
     </elements>
 </model>
