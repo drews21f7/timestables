@@ -10,6 +10,8 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    //MARK: - VC Properties
+    
     var timerInstance = TimerController.sharedInstance
     
     //Tracks the index of the stats array from StatsController
@@ -60,13 +62,13 @@ class MenuViewController: UIViewController {
             print ("No timer saved")
         } else {
             for timer in timerFetch.fetchedObjects! {
-                timerInstance.timer.append(timer)
+                timerInstance.timerData.append(timer)
             }
             DispatchQueue.main.async {
-                self.timerPosition1Label.text = "\(self.timerInstance.timer[0].seconds)"
-                self.timerPosition2Label.text = "\(self.timerInstance.timer[0].tensOfSeconds)"
-                self.timerPosition3Label.text = "\(self.timerInstance.timer[0].minutes)"
-                self.timerPosition4Label.text = "\(self.timerInstance.timer[0].tensOfMinutes)"
+                self.timerPosition1Label.text = "\(self.timerInstance.timerData[0].seconds)"
+                self.timerPosition2Label.text = "\(self.timerInstance.timerData[0].tensOfSeconds)"
+                self.timerPosition3Label.text = "\(self.timerInstance.timerData[0].minutes)"
+                self.timerPosition4Label.text = "\(self.timerInstance.timerData[0].tensOfMinutes)"
             }
             print ("Timer fetched")
         }
@@ -158,10 +160,10 @@ class MenuViewController: UIViewController {
     
     @IBAction func setTimerButtonTapped(_ sender: Any) {
         if timerIsSet == false {
-            if self.timerInstance.timer.isEmpty == true {
+            if self.timerInstance.timerData.isEmpty == true {
                 self.timerInstance.createTimer(tensOfMinutes: tensOfMinutes, minutes: minutes, tensOfSeconds: tensOfSeconds, seconds: seconds)
             } else {
-                self.timerInstance.updateTimer(timer: self.timerInstance.timer[0], tensOfMinutes: tensOfMinutes, minutes: minutes, tensOfSeconds: tensOfSeconds, seconds: seconds)
+                self.timerInstance.updateTimer(timer: self.timerInstance.timerData[0], tensOfMinutes: tensOfMinutes, minutes: minutes, tensOfSeconds: tensOfSeconds, seconds: seconds)
             }
             timerIsSet = true
             setTimerButton.titleLabel?.text = ("Disable Timer")
@@ -186,6 +188,9 @@ class MenuViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteTimerButtonTapped(_ sender: Any) {
+        timerInstance.deleteTimer(timer: timerInstance.timerData[0])
+    }
     
     /*
     // MARK: - Navigation

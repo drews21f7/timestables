@@ -13,14 +13,14 @@ class TimerController {
     
     static let sharedInstance = TimerController()
     
-    var fetchedResultsController: NSFetchedResultsController<Timer>
+    var fetchedResultsController: NSFetchedResultsController<TimerData>
     
     init() {
         
-        let fetchRequest: NSFetchRequest<Timer> = Timer.fetchRequest()
+        let fetchRequest: NSFetchRequest<TimerData> = TimerData.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "secondsTotaled", ascending: true)]
         
-        let resultsController: NSFetchedResultsController<Timer> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let resultsController: NSFetchedResultsController<TimerData> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         fetchedResultsController = resultsController
         do {
@@ -30,9 +30,9 @@ class TimerController {
         }
     }
     
-    var timer: [Timer] = []
+    var timerData: [TimerData] = []
     
-    //CRUD
+    //MARK: - CRUD
     
     
     // Takes in a traditional timer number, converts it into seconds, and turns it into a timer object
@@ -43,13 +43,13 @@ class TimerController {
         timeInSeconds += minutes * 60
         timeInSeconds += tensOfSeconds * 10
         timeInSeconds += seconds
-        let newTimer = Timer(seconds: seconds, tensOfSeconds: tensOfSeconds, minutes: minutes, tensOfMinutes: tensOfMinutes, secondsTotaled: timeInSeconds)
-        timer.append(newTimer)
+        let newTimer = TimerData(seconds: seconds, tensOfSeconds: tensOfSeconds, minutes: minutes, tensOfMinutes: tensOfMinutes, secondsTotaled: timeInSeconds)
+        timerData.append(newTimer)
         saveToPersistentStore()
         print ("Timer created")
     }
     
-    func updateTimer(timer: Timer, tensOfMinutes: Int16, minutes: Int16, tensOfSeconds: Int16, seconds: Int16) {
+    func updateTimer(timer: TimerData, tensOfMinutes: Int16, minutes: Int16, tensOfSeconds: Int16, seconds: Int16) {
         var timeInSeconds: Int16 = 0
         timeInSeconds += tensOfMinutes * 10 * 60
         timeInSeconds += minutes * 60
@@ -64,7 +64,13 @@ class TimerController {
         print ("Timer Updated")
     }
     
-    // Save to Coredata
+    func deleteTimer(timer: TimerData) {
+        CoreDataStack.managedObjectContext.delete(timer)
+        saveToPersistentStore()
+        print ("buhleeted")
+    }
+    
+    //MARK: - Persistence
     
     func saveToPersistentStore() {
         do {

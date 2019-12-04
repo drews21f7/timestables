@@ -37,7 +37,7 @@ class StatsController {
     
     var stats: [Stats] = []
     
-    //CRUD
+    //MARK: - CRUD
     
     // Initializes stats and stats array on the first practice
     func initializeStats() {
@@ -113,7 +113,7 @@ class StatsController {
         print ("Data deleted, probably")
     }
     
-    // Save to Coredata
+    //MARK: - Persistence
     
     func saveToPersistentStore() {
         do {

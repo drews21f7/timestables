@@ -12,6 +12,8 @@
 		3A00CC4F23833B1C0095A5F4 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC4E23833B1C0095A5F4 /* TimerController.swift */; };
 		3A00CC74238C128F0095A5F4 /* StartingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC73238C128F0095A5F4 /* StartingScreenViewController.swift */; };
 		3A00CC77238DD1010095A5F4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC76238DD1010095A5F4 /* MenuViewController.swift */; };
+		3A00CC792393479F0095A5F4 /* TimesTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC782393479F0095A5F4 /* TimesTablesViewController.swift */; };
+		3A00CC7B2395AEBA0095A5F4 /* TimerCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A00CC7A2395AEBA0095A5F4 /* TimerCounter.swift */; };
 		3A32EAF1237623E300D49A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32EAF0237623E300D49A07 /* AppDelegate.swift */; };
 		3A32EAF3237623E300D49A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32EAF2237623E300D49A07 /* SceneDelegate.swift */; };
 		3A32EAF8237623E300D49A07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A32EAF6237623E300D49A07 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		3A00CC4E23833B1C0095A5F4 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		3A00CC73238C128F0095A5F4 /* StartingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingScreenViewController.swift; sourceTree = "<group>"; };
 		3A00CC76238DD1010095A5F4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3A00CC782393479F0095A5F4 /* TimesTablesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesTablesViewController.swift; sourceTree = "<group>"; };
+		3A00CC7A2395AEBA0095A5F4 /* TimerCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCounter.swift; sourceTree = "<group>"; };
 		3A32EAED237623E300D49A07 /* timestables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timestables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A32EAF0237623E300D49A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A32EAF2237623E300D49A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			children = (
 				3A00CC73238C128F0095A5F4 /* StartingScreenViewController.swift */,
 				3A00CC76238DD1010095A5F4 /* MenuViewController.swift */,
+				3A00CC782393479F0095A5F4 /* TimesTablesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 				3A32EB0C237A1A1800D49A07 /* CoreDataStack.swift */,
 				3A32EB0E237A1A6B00D49A07 /* Stats+Convenience.swift */,
 				3A00CC4C23833A970095A5F4 /* Timer+Convenience.swift */,
+				3A00CC7A2395AEBA0095A5F4 /* TimerCounter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,9 +215,11 @@
 				3A00CC4A237CC2900095A5F4 /* StatsController.swift in Sources */,
 				3A32EAFB237623E300D49A07 /* timestables.xcdatamodeld in Sources */,
 				3A00CC4D23833A970095A5F4 /* Timer+Convenience.swift in Sources */,
+				3A00CC792393479F0095A5F4 /* TimesTablesViewController.swift in Sources */,
 				3A32EAF1237623E300D49A07 /* AppDelegate.swift in Sources */,
 				3A00CC4F23833B1C0095A5F4 /* TimerController.swift in Sources */,
 				3A32EAF3237623E300D49A07 /* SceneDelegate.swift in Sources */,
+				3A00CC7B2395AEBA0095A5F4 /* TimerCounter.swift in Sources */,
 				3A32EB0D237A1A1800D49A07 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

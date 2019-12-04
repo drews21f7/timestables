@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension Timer {
+extension TimerData {
     convenience init(seconds: Int16, tensOfSeconds: Int16, minutes: Int16, tensOfMinutes: Int16, secondsTotaled: Int16, context: NSManagedObjectContext = CoreDataStack.managedObjectContext) {
         self.init(context: context)
         self.seconds = seconds
