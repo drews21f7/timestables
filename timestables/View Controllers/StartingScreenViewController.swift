@@ -12,6 +12,9 @@ class StartingScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Checks if user has run app before, if not initializes stats objects, if so it fetches their stats data and appends it to stats array
+        
         if StatsController.sharedInstance.fetchedResultsController.fetchedObjects?.isEmpty == true {
             StatsController.sharedInstance.initializeStats()
             print ("Stats Initialized")

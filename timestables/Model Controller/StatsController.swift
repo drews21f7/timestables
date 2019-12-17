@@ -31,10 +31,6 @@ class StatsController {
         }
     }
     
-    // TODO: - Initialize these all at once once user starts. Just check if stats array is empty or not, if empty then initialize, otherwise just fetch the current stats for that times table.
-    
-
-    
     var stats: [Stats] = []
     
     //MARK: - CRUD

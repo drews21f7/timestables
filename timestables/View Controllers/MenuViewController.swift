@@ -14,15 +14,14 @@ class MenuViewController: UIViewController {
     
     var timerInstance = TimerController.sharedInstance
     
-    //Tracks the index of the stats array from StatsController
-    var statsIDNumber = 0
-    
+    //Tracks which times tables is selected
+    var timesTables = 0
+    // Tracks if a times tables has been selected
     var timesTableSelected = false
     
     //MARK: - Button outlets
     
     @IBOutlet weak var setTimerButton: UIButton!
-    
     
     
     //MARK: - Timer Properties
@@ -38,10 +37,8 @@ class MenuViewController: UIViewController {
     
     var timerPosition = 1
     
-    
     // Timer labels, position 1 starts from the right
     
-
     @IBOutlet weak var timerPosition1Label: UILabel!
     @IBOutlet weak var timerPosition2Label: UILabel!
     @IBOutlet weak var timerPosition3Label: UILabel!
@@ -72,44 +69,40 @@ class MenuViewController: UIViewController {
             }
             print ("Timer fetched")
         }
-
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - Times tables action buttons
     
-    // Stats ID number should be one less than the number selected i.e. twosButton should be 1, threesButton should be 2 ect. ect.
-    
     @IBAction func twosButtonTapped(_ sender: Any) {
-        statsIDNumber = 1
+        timesTables = 2
         timesTableSelected = true
     }
     @IBAction func threesButtonTapped(_ sender: Any) {
-        statsIDNumber = 2
+        timesTables = 3
         timesTableSelected = true
     }
     @IBAction func foursButtonTapped(_ sender: Any) {
-        statsIDNumber = 3
+        timesTables = 4
         timesTableSelected = true
     }
     @IBAction func fivesButtonTapped(_ sender: Any) {
-        statsIDNumber = 4
+        timesTables = 5
         timesTableSelected = true
     }
     @IBAction func sixesButtonTapped(_ sender: Any) {
-        statsIDNumber = 5
+        timesTables = 6
         timesTableSelected = true
     }
     @IBAction func sevensButtonTapped(_ sender: Any) {
-        statsIDNumber = 6
+        timesTables = 7
         timesTableSelected = true
     }
     @IBAction func eightsButtonTapped(_ sender: Any) {
-        statsIDNumber = 7
+        timesTables = 8
         timesTableSelected = true
     }
     @IBAction func ninesButtonTapped(_ sender: Any) {
-        statsIDNumber = 8
+        timesTables = 9
         timesTableSelected = true
     }
     
