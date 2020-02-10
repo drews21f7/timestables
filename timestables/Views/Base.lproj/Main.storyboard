@@ -440,7 +440,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="lih-pU-06x" kind="show" id="Inh-uN-Kuq"/>
+                                    <segue destination="lih-pU-06x" kind="show" identifier="toTimesTablesSegue" id="Inh-uN-Kuq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBp-dc-cST">
@@ -491,7 +491,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="horizontal line" translatesAutoresizingMaskIntoConstraints="NO" id="xTs-xj-gKZ">
-                                <rect key="frame" x="54" y="471" width="307" height="1"/>
+                                <rect key="frame" x="54" y="471" width="307" height="310"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="HND-c6-rcT">
                                 <rect key="frame" x="100" y="523" width="214" height="90"/>

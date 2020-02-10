@@ -185,15 +185,33 @@ class MenuViewController: UIViewController {
         timerInstance.deleteTimer(timer: timerInstance.timerData[0])
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "toTimesTablesSegue" {
+            if timesTableSelected == true {
+                return true
+            } else {
+                let alertController = UIAlertController.init(title: "No times table number selected", message: "You must first select a number", preferredStyle: .alert)
+                let ok = UIAlertAction.init(title: "Ok", style: .cancel)
+                alertController.addAction(ok)
+                present(alertController, animated: true)
+                return false
+            }
+        }
+        return false
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTimesTablesSegue" {
+            guard let destinationVC = segue.destination as? TimesTablesViewController else { return }
+            destinationVC.timesTables = timesTables
+            destinationVC.timerIsSet = timerIsSet
+        }
+    }
+    
 
 }
 

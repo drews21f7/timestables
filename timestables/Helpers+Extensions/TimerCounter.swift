@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TimerCounterDelegate: class {
-    func timerStopped()
+    //func timerStopped()
     func timerCompleted()
     func timerSecondTicked()
 }
@@ -56,7 +56,7 @@ class TimerCounter: NSObject {
         if isOn {
             self.timeRemaining = nil
             timer?.invalidate()
-            delegate?.timerStopped()
+            //delegate?.timerStopped()
         }
     }
 }

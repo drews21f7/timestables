@@ -30,10 +30,24 @@ class TimesTablesViewController: UIViewController {
     
     
     
-    //MARK: - Timer Properties
+    //MARK: - Timer Properties and functions
     var timerData = TimerController.sharedInstance.timerData[0]
     var timer = TimerCounter()
     var timerIsSet: Bool?
+    
+    func updateLabel() {
+        if timer.isOn {
+            timerPosition1Label.text = "\(timerData.seconds)"
+            timerPosition2Label.text = "\(timerData.tensOfSeconds)"
+            timerPosition3Label.text = "\(timerData.minutes)"
+            timerPosition4Label.text = "\(timerData.tensOfMinutes)"
+        } else {
+            timerPosition1Label.text = ""
+            timerPosition2Label.text = ""
+            timerPosition3Label.text = ""
+            timerPosition4Label.text = ""
+        }
+    }
     
     
     
@@ -45,7 +59,7 @@ class TimesTablesViewController: UIViewController {
     @IBOutlet weak var randomNumberLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     
-    //MARK: - Timer labels
+    //MARK: - Timer labels, position 1 starts from the right
     
     @IBOutlet weak var timerPosition1Label: UILabel!
     @IBOutlet weak var timerPosition2Label: UILabel!
@@ -62,6 +76,11 @@ class TimesTablesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer.delegate = self
+        customBackButton()
+        checkTimer()
+        timerCounter()
+        
         // TODO - Make error message appear if times tables number isn't found
         guard let timesTables = timesTables else { print ("Error, no times tables number found"); return }
         beginPractice(timesTables: timesTables)
@@ -166,5 +185,75 @@ class TimesTablesViewController: UIViewController {
     @IBAction func submitAnswerButtonTapped(_ sender: Any) {
         answerCheck(answer: answerInt, question: currentQuestion)
     }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        timer.stopTimer()
+        print ("Timer stopped")
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+//MARK: - Extensions
+
+extension TimesTablesViewController {
+    func timerCounter() {
+        if timerData.seconds >= 1 {
+            timerData.seconds -= 1
+        } else if timerData.tensOfSeconds >= 1 {
+            timerData.tensOfSeconds -= 1
+            timerData.seconds = 9
+        } else if timerData.minutes >= 1 {
+            timerData.minutes -= 1
+            timerData.tensOfSeconds = 5
+            timerData.seconds = 9
+        } else if timerData.tensOfMinutes >= 1 {
+            timerData.tensOfMinutes -= 1
+            timerData.minutes = 9
+            timerData.tensOfSeconds = 5
+            timerData.seconds = 9
+        }
+    }
+    /// Checks if timer was enabled from previous view
+    func checkTimer() {
+        if timerIsSet != nil {
+            if timerIsSet == true {
+                let timerSeconds = Double(timerData.secondsTotaled)
+                timer.startTimer(timerSeconds)
+            }
+        } else {
+            print ("timerIsSet came back nil")
+            timerIsSet = false
+        }
+    }
+    
+    func customBackButton() {
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(TimesTablesViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+    }
+}
+
+//MARK: Delegates
+
+extension TimesTablesViewController: TimerCounterDelegate {
+//    func timerStopped() {
+//        <#code#>
+//    }
+    
+    func timerCompleted() {
+        StatsController.sharedInstance.updateStatsNonGlobal(stats: statsInstance[timesTables! - 1], score: score)
+        submitAnswerButton.isHidden = true
+        let alertController = UIAlertController.init(title: "Times Up!", message: "You ran out of time. Your score has been saved", preferredStyle: .alert)
+        let ok = UIAlertAction.init(title: "Ok", style: .cancel)
+        alertController.addAction(ok)
+        present(alertController, animated: true)
+    }
+    
+    func timerSecondTicked() {
+        timerCounter()
+        updateLabel()
+    }
+    
     
 }
